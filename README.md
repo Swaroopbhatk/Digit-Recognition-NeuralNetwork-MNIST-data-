@@ -1,1 +1,1 @@
-# Digit-Recognition-NeuralNetwork-MNIST-data-
+Please see the Reort.html or Report.pdf for details. Thanks
