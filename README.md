@@ -1,1 +1,1 @@
-Please see the Reort.html or Report.pdf for details. Thanks
+Please see the MNIST_FinalModel_Report.html for details. Thanks
