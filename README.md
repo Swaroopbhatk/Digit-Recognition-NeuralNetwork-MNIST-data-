@@ -1,4 +1,6 @@
 
+<b>Please see pdf report for performance images(Confusion Matrix, ROC).</b>
+
 <b><i>Date: 25-02-2018</i></b>   
 <b><i>Name: Swaroop S Bhat</i></b>
 
