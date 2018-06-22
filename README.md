@@ -1,7 +1,11 @@
 <b><i>Date: 25-02-2018</i></b>   
 <b><i>Name: Swaroop S Bhat</i></b>
 
-# Final Resuts - Comparision of optimization techniques:
+## Final Resuts - Comparision of optimization techniques:
+    - Batch Gradient Descent
+    - Mini Batch Gradient Descent
+    - Adam Optimization with mini batch GD
+    - ReLU activation with adam optimization
 
 ![image](https://user-images.githubusercontent.com/32418025/41793570-763be310-7654-11e8-8a76-f3f5c751e319.png)
 ![image](https://user-images.githubusercontent.com/32418025/41793545-615c4f02-7654-11e8-809d-a9ff46ecabbc.png)
