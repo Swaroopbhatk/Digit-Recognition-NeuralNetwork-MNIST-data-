@@ -1,6 +1,13 @@
 <b><i>Date: 25-02-2018</i></b>   
 <b><i>Name: Swaroop S Bhat</i></b>
 
+# Final Resuts - Comparision of optimization techniques:
+
+![image](https://user-images.githubusercontent.com/32418025/41793570-763be310-7654-11e8-8a76-f3f5c751e319.png)
+![image](https://user-images.githubusercontent.com/32418025/41793545-615c4f02-7654-11e8-809d-a9ff46ecabbc.png)
+
+Further details is given below.
+
 # Implementation of Neural Network and Optimization
 
 To understand working of neural network let us start with a sample of simple neural network model with 1 hidden layer using moons400.csv dataset.  
@@ -106,5 +113,56 @@ Ref: https://www.coursera.org/learn/machine-learning/lecture/9zJUs/mini-batch-gr
 ![image](https://user-images.githubusercontent.com/32418025/41793223-57368c5a-7653-11e8-90d2-8371a6c22c37.png)
 ![image](https://user-images.githubusercontent.com/32418025/41793274-766bcef0-7653-11e8-813b-14c3f626d3c7.png)
 ![image](https://user-images.githubusercontent.com/32418025/41793315-89b53afa-7653-11e8-9034-5dd5b82e88d2.png)
+
+
+### Optimization 3 - Adam Optimization
+    Adam is an update to the RMSProp optimizer. In this optimization algorithm, running averages of both the gradients and    the second moments of the gradients are used.
+    
+#### Algorithm
+    1. Initialize Weights and Biases.
+        2. For each iteration in epoch:
+            - Create Multiple batches here 7 batches are created.
+            - For each iteration in batch t:
+                Initialize Vdw=0, Sdw=0, Vdb=0, Sdb=0, epsilon = 0.0000001, beta1 = 0.9, beta2 = 0.999
+                *  Consider the current batch. 
+                *  Feedforward: Get activation values using sigmoid function for each layer.
+                *  Back Propagation: Get error in output layer and calculate derivative of error in each hidden layers.
+                    - Compute dw, db using current mini batch
+                    - Vdw = Beta1*Vdw+(1-Beta1)*dw; Vdb=Beta1*Vdb+(1-Beta1)*db
+                    - Sdw = Beta2*Sdw+(1-Beta2)*dw^2; Vdb=Beta1*Sdb+(1-Beta1)*db^2
+                    - Compute Vdw corrected = Vdw/(1-Beta1^t); Vdb corrected = Vdb/(1-Beta1^t)
+                    - Compute Sdw corrected = Sdw/(1-Beta1^t); Sdb corrected = Sdb/(1-Beta1^t)
+                * Update weights.
+                    - W = W - alpha*(Vdw corrected/(sqrt(Sdw corrected)+epsilon))
+                    - b = b - alpha*(Vdb corrected/(sqrt(Sdb corrected)+epsilon))
+        3. Use the updated weights and biases in feed forward to predict labels for test set. 
+   
+<li>Ref:https://www.youtube.com/watch?v=JXQT_vxqwIs (Andrew Ng)</li>
+<li>Ref:https://en.wikipedia.org/wiki/Stochastic_gradient_descent#Adam (Wiki) </li>
+
+#### Simulation Results:
+
+![image](https://user-images.githubusercontent.com/32418025/41793396-cc77443c-7653-11e8-86bb-3afac23d5564.png)
+![image](https://user-images.githubusercontent.com/32418025/41793419-e39ecf7c-7653-11e8-8222-e59a1072fc85.png)
+
+
+### Optimization 4 - ReLU Activation with Adam Optimization
+    Rectifier linear unit or its more widely known name as ReLU becomes popular for the past several years since its performance  and speed. In contrast to other common activation functions, ReLU is a linear function. In other words, its derivative is either 0 or 1.
+    i.e.f(x) = max(x, 0)
+    
+<li>Ref: https://sefiks.com/2017/08/21/relu-as-neural-networks-activation-function/ </li>
+<li>Ref: https://github.com/Kulbear/deep-learning-nano-foundation/wiki/ReLU-and-Softmax-Activation-Functions </li>
+
+#### Simulation Results:
+
+![image](https://user-images.githubusercontent.com/32418025/41793471-18fb661c-7654-11e8-8014-745c4f286a84.png)
+![image](https://user-images.githubusercontent.com/32418025/41793495-33d372e0-7654-11e8-95f7-95202f078d10.png)
+
+
+### Comparision of optimization techniques:
+
+![image](https://user-images.githubusercontent.com/32418025/41793545-615c4f02-7654-11e8-809d-a9ff46ecabbc.png)
+![image](https://user-images.githubusercontent.com/32418025/41793570-763be310-7654-11e8-8a76-f3f5c751e319.png)
+
 
     
