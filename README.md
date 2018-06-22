@@ -75,7 +75,36 @@ Note: All below mentioned optimizations is created in seperate codes to increase
 #### Simulation Results:
 
 ![gd1](https://user-images.githubusercontent.com/32418025/41793060-ded163ca-7652-11e8-8468-79bd83643d14.png)
-
 ![image](https://user-images.githubusercontent.com/32418025/41793092-f8963d62-7652-11e8-8278-3f0c516186be.png)
+![image](https://user-images.githubusercontent.com/32418025/41793168-25e58976-7653-11e8-8e02-6fed88dec14e.png)
+
+
+### Optimization 2 - Mini Batch Gradient Descent
+    This is similar to stochastic gradient descent, where set of batches are taken to update weights instead of single 
+    instance of training set. Hence, it is faster than stochastic gradient descent and slower than gradient descent 
+    (entire traing set is considered as one batch). As a result it is possible that mini batch gradient descent converges 
+    faster than batch gradient descent.
+    
+    
+
+#### Algorithm
+    1. Initialize Weights and Biases.
+        2. For each iteration in epoch:
+            - Create Multiple batches here 7 batches are created.
+            - For each iteration in batch:
+                *  Consider the current batch. 
+                *  Feedforward: Get activation values using sigmoid function for each layer.
+                *  Back Propagation: Get error in output layer and calculate derivative of error in each hidden layers.
+                    +  Gradients: use these gradients to update previous value of weights and biases.
+                * Continue the above processs for all remaining batches and update weights.
+        3. Use the updated weights and biases in feed forward to predict labels for test set. 
+
+Ref: https://www.coursera.org/learn/machine-learning/lecture/9zJUs/mini-batch-gradient-descent
+
+#### Simulation Results:
+
+![image](https://user-images.githubusercontent.com/32418025/41793223-57368c5a-7653-11e8-90d2-8371a6c22c37.png)
+![image](https://user-images.githubusercontent.com/32418025/41793274-766bcef0-7653-11e8-813b-14c3f626d3c7.png)
+![image](https://user-images.githubusercontent.com/32418025/41793315-89b53afa-7653-11e8-9034-5dd5b82e88d2.png)
 
     
